@@ -183,7 +183,7 @@ bool CustomerBag::add() {
         if(i == 0) name[i] = toupper(name[i]); //Make the first letter uppercase
     }
     //Generate ID for Customer
-    while(idval == 0) {
+    while(idval >= 0) {
         idval = (rand()%8999+1000);
         if(!has(idval)) {
             break;
@@ -259,17 +259,17 @@ int main(int argc, const char * argv[]) {
         switch(sel)
         {
             case 1:
-                cout << "Adding a new Customer...";
+                cout << "Adding a new Customer..." << endl;
                 newbag.add();
                 break;
             case 2:
-                cout << "Enter Customer ID to Delete..";
+                cout << "Enter Customer ID to Delete.." << endl;
                 cin >> idval;
                 newbag.remove(idval);
                 newbag.ListCustomers();
                 break;
             case 3:
-                cout << "Deleting Last Customer...";
+                cout << "Deleting Last Customer..." << endl;
                 newbag.remove();
                 break;
             case 4:
